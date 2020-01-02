@@ -1,0 +1,34 @@
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.60.1"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[context.deploy-preview]
+command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.60.1"
+
+[context.branch-deploy]
+command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "ç"
+
+#[context.next.environment]
+#HUGO_ENABLEGITINFO = "true"
+
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+#     # use this to clear HSTS settings
+#     # Strict-Transport-Security = "max-age=0; includeSubDomains;"
+#     X-Frame-Options = "DENY"
+#     X-XSS-Protection = "1; mode=block"
+#     Referrer-Policy = "no-referrer"
+#     X-Content-Type-Options = "nosniff"

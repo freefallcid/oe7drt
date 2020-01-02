@@ -1,0 +1,52 @@
+# Redirect default Netlify subdomain to primary domain
+https://oe7drt.netlify.com/* https://oe7drt.com/:splat 301!
+http://oe7drt.netlify.com/* https://oe7drt.com/:splat 301!
+
+# Redirect domain alias for hamradio
+https://oe7drt.at/* https://oe7drt.com/ 301!
+http://oe7drt.at/* https://oe7drt.com/ 301!
+
+# ----------------------------------------------------------------------
+# Main redirects
+# ----------------------------------------------------------------------
+
+#/recipes/               /categories/rezepte/ 301
+#/rezepte/               /categories/rezepte/ 301
+#/articles/              /post/ 301
+#/work/                  /post/ 301
+#/portfolio/             /post/ 301
+#/portfolio/software/    /categories/software/ 301
+#/portfolio/fotografie/  /about/ 301
+#/about/                 /oe7drt/ 301
+
+
+# ----------------------------------------------------------------------
+# Fotogallerie redirects
+# ----------------------------------------------------------------------
+
+#/photos/*  https://drtom0.myds.me/photo/#!Albums 301
+#/fotos/*   https://drtom0.myds.me/photo/#!Albums 301
+
+#/til/ /categories/notizen/ 301
+#/til/* /post/notizen/:splat 301
+
+# ----------------------------------------------------------------------
+# Sitemap redirects
+# ----------------------------------------------------------------------
+
+/sitemap.xml.gz /sitemap.xml 301
+
+# ----------------------------------------------------------------------
+# Feed redirects
+# ----------------------------------------------------------------------
+
+/atom /index.xml 301
+/rss /index.xml 301
+/feed.xml /index.xml 301
+/til.xml /index.xml 301
+/feed.json /index.json 301
+
+/articles.xml     /index.xml 301
+/recipes.xml      /index.xml 301
+/photography.xml  /index.xml 301
+/timelapse.xml    /index.xml 301
