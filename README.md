@@ -13,11 +13,16 @@ static site generator I use on my websites nowadays.
 - [x] [Netlify](https://www.netlify.com/)
 - [x] [Google-Analytics](https://analytics.google.com/analytics/web/)
 - [x] [PaperCSS-Theme for Hugo](https://github.com/zwbetz-gh/papercss-hugo-theme)
+- [x] [hugo-easy-gallery](https://github.com/liwenyip/hugo-easy-gallery)
 
 ## Licenses
 
 The theme that I use is called PaperCSS and is maintained by
 [Zachary Wade Betz](https://github.com/zwbetz-gh). It is licensed under the
+MIT license.
+
+An additional photo gallery is in use, which is maintained by
+[Li-Wen Yip](https://github.com/liwenyip). It is also licensed under the
 MIT license.
 
 My codebase is also licensed under the
