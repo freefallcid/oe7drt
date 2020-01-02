@@ -1,19 +1,50 @@
 +++
 title = "About"
-date = "2014-04-09"
-aliases = ["about-us","about-hugo","contact"]
-author = "Hugo Authors"
+date = "2020-01-02"
+aliases = ["about-us","oe7drt","contact"]
+#author = "Hugo Authors"
 +++
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+Hello, my name is Dominic and I maintain this website.  
+I am a licensed ham radio operator since 2019 and my callsign is **OE7DRT**.
 
-It makes use of a variety of open source projects including:
+My QTH is **Längenfeld** [^lgfd] - the locator for that is
+[JN57lb](http://www.levinecentral.com/ham/grid_square.php?Grid=JN57lb).
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+[^lgfd]: You can also write this like: Laengenfeld
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+## The equipment I use
 
+- Icom IC-7300 transceiver
+- PSU-1250 switched-mode power supply 50A
+- 12Ah 12V LiFePo4 battery (for portable use)
+- 12Ah 12V AGM battery (for not so portable use)
+- MFJ-993B antenna tuner
+- MFJ-269C SWR analyzer
+- CHA HYBRID MICRO in combination with
+  - CHA MIL WHIP 2.0
+  - CHA MIL EXTENSION 2.0
+  - 60' wire (~18m)
+- CHA EMCOMM II (matching box with 60' wire)  
+- Complete Multiband Antenna 6-80m  
+  (AlphaAntenna) - **I do not recommend this antenna, this is wasted money!**
+- 10m antenna mast (fiberglass)
+- Hytera PD-785G
+- Anytone D878UV+  
+  **I also cannot recommend this device.**  
+  CPS is very buggy and my device does not get recognised from Windows
+  (I tried three different windows notebooks)
+
+## Other resources
+
+I used to maintain a broader range of topics on my other website
+`dominicreich.com` - but keeping track of all the changes in the more complex
+hugo theme made me decide to implement most articles in this smaller one.
+
+For reference, my older website are still accessible on the following URLs:
+
+- [dominicreich.com jekyll version](https://dominicreich-old.netlify.com/)  
+  you can search this website with algolia search
+- [dominicreich.com hugo version](https://dominicreich.com/)  
+  next version of the older jekyll version but still a few style things won't
+  work correctly
