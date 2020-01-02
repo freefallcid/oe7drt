@@ -1,5 +1,7 @@
 # my personal website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6658b217-9b6e-4eb8-b450-655ba0563f53/deploy-status)](https://app.netlify.com/sites/oe7drt/deploys)
+
 This is my personal website. It is a simple and minimalistic website.
 
 The code of this website is saved on Github. [Netlify](https://www.netlify.com/)
