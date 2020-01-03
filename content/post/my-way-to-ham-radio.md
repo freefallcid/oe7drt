@@ -13,6 +13,16 @@ of things.
 
 <!--more-->
 
+{{< alert "secondary" >}}
+Just to be clear on this: This is not a tutorial, this is a short story from
+my life that explains how I came to my amateur radio license. This article was
+already published in german on my older website -
+<a href="https://dominicreich.com/post/amateurfunkkurs-2019/">read on</a>
+if you like.
+{{< /alert >}}
+
+---
+
 In 2019 I decided to go on a [preparatory course](https://oe7.oevsv.at/veranstaltungen/veranstaltungen-00001/Amateurfunkkurs-in-Innsbruck/)
 at my local ham radio club.
 
