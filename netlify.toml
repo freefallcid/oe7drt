@@ -2,6 +2,12 @@
 	publish = "public"
 	command = "hugo --gc --minify"
 
+# this is currently Netlify Beta
+# https://github.com/netlify/build
+# https://www.netlify.com/build/plugins-beta/
+#[build.lifecycle]
+#  onSuccess = "npm run algolia"
+
 [context.production.environment]
 	HUGO_VERSION = "0.60.1"
 	HUGO_ENV = "production"
@@ -20,9 +26,6 @@
 
 [context.next.environment]
   HUGO_ENABLEGITINFO = "true"
-
-[build.lifecycle]
-  onSuccess = "npm run algolia"
 
 # I've set up _headers for this
 # [[headers]]
