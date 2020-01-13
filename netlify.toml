@@ -2,9 +2,6 @@
 	publish = "public"
 	command = "hugo --gc --minify"
 
-[build.lifecycle]
-  onSuccess = "npm run algolia"
-
 [context.production.environment]
 	HUGO_VERSION = "0.60.1"
 	HUGO_ENV = "production"
@@ -14,6 +11,18 @@
 
 [context.deploy-preview.environment]
 	HUGO_VERSION = "0.60.1"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -DEF -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+  HUGO_VERSION = "0.60.1"
+
+[context.next.environment]
+  HUGO_ENABLEGITINFO = "true"
+
+[build.lifecycle]
+  onSuccess = "npm run algolia"
 
 # I've set up _headers for this
 # [[headers]]
