@@ -10,14 +10,15 @@ http://oe7drt.at/* https://oe7drt.com/ 301!
 # Main redirects
 # ----------------------------------------------------------------------
 
-#/recipes/               /categories/rezepte/ 301
-#/rezepte/               /categories/rezepte/ 301
-#/articles/              /post/ 301
-#/work/                  /post/ 301
-#/portfolio/             /post/ 301
-#/portfolio/software/    /categories/software/ 301
-#/portfolio/fotografie/  /about/ 301
-#/about/                 /oe7drt/ 301
+#/recipes/                  /categories/rezepte/ 301
+#/rezepte/                  /categories/rezepte/ 301
+#/articles/                 /post/ 301
+#/work/                     /post/ 301
+#/portfolio/                /post/ 301
+#/portfolio/software/       /categories/software/ 301
+#/portfolio/fotografie/     /about/ 301
+#/about/                    /oe7drt/ 301
+/blog/my-way-to-ham-radio/  /blog/my-way-to-amateur-radio/
 
 
 # ----------------------------------------------------------------------
