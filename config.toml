@@ -19,6 +19,19 @@ googleAnalytics = "UA-131656855-5"
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat = "Jan 2, 2006"
 
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[params.algolia]
+  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
+
+[outputs]
+  home = ["HTML", "RSS", "Algolia"]
+
 [menu]
   [[menu.nav]]
     name = "Blog"
