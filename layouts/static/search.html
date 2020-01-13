@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <div id="search-box"><!-- SearchBox widget will appear here --></div>
+  <!-- include algolia logo -->
+  <!-- <img src="https://www.algolia.com/static_assets/images/pricing/pricing_new/algolia-powered-by-14773f38.svg"></img> -->
+  <a href="https://www.algolia.com/" target="_blank"><img src="https://www.algolia.com/gatsby-images/shared/algolia_logo/search-by-algolia-light-background.png"></img></a>
+
+  <div id="hits" class="my-4">
+    <!-- Hits widget will appear here -->
+  </div>
+
+  <div id="pagination">
+    <!-- Pagination widget will appear here -->
+  </div>
+{{ end }}
+
+{{ define "addstyles" }}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.1/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.1/dist/instantsearch-theme-algolia.min.css">
+<style>
+mark {
+  padding: 0;
+}
+</style>
+{{ end }}
+
+{{ define "addscripts" }}
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.1"></script>
+<script src="/js/search.js"></script>
+{{ end }}
