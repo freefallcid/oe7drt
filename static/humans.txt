@@ -12,4 +12,6 @@
   Language:     English
   Built with:   Hugo {{ hugo.Version }} <https://jekyllrb.com>
                 Sublime Text 3 <https://www.sublimetext.com>
-                Netlify CI <https://www.netlify.com/>
+                Netlify CI <https://www.netlify.com>
+                Github <https://github.com>
+                Sublime Merge <https://www.sublimemerge.com>
