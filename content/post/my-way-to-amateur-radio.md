@@ -1,7 +1,8 @@
 +++
-title = "How to get an amateur radio license in austria"
+title = "How To Get An Amateur Radio License In Austria"
+#summary = ""
 date = 2020-01-02T17:01:26+01:00
-tags = ["life"]
+tags = ["life","ham radio"]
 
 +++
 
