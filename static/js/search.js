@@ -1,46 +1,65 @@
 const search = instantsearch({
-  appId: '***',
-  apiKey: '***',
-  indexName: '???',
-  urlSync: true
+  appId: 'RM5UBNYOIM',
+  apiKey: '76f79ffe28e10e3d95fbf8503a08f846',
+  indexName: 'oe7drt-hugo',
+  routing: true
 });
 
-search.addWidget(
+search.addWidgets([
+  instantsearch.widgets.searchBox({
+    container: '#searchbox',
+    showReset: false,
+    placeholder: 'Search for articles',
+    autofocus: true,
+    poweredBy: true,
+    reset: true,
+    loadingIndicator: false,
+    cssClasses: {
+      root: 'root',
+      form: 'form',
+      input: 'input form-control',
+      submit: 'btn btn-default',
+      reset: 'btn btn-default',
+    },
+  }),
+
+  instantsearch.widgets.stats({
+    container: '#stats',
+  }),
+]);
+
+var hitTemplate =
+  '<div class="hit">' +
+  '<h4 class="hit-heading">{{title}}</h4>' +
+  '<p class="hit-summary">{{summary}}</p>' +
+  '</div>';
+
+var noResultsTemplate =
+  '<div class="text-center">No results found matching <strong>{{query}}</strong>.</div>';
+
+search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
+    hitsPerPage: 10,
     templates: {
-      empty: 'No results',
-      // https://caniuse.com/#feat=template-literals
-      item: '<div class="my-3"><h3><a href="{{ permalink }}">{{{ _highlightResult.title.value }}}</a></h3><div><span class="text-secondary">{{ lastmod_date }}</span> <span class="text-secondary">∙ {{ tags_text }}</span> {{#_highlightResult.description.value}}∙ {{ _highlightResult.description.value }}{{/_highlightResult.description.value}}</div><small class="text-muted">{{ summary }}</small></div>'
+      empty: noResultsTemplate,
+      item: hitTemplate
+      // item: '{{{ _highlightResult.title.value }}}'
     },
-    transformData: {
-      item: function(data) {
-        data.lastmod_date = new Date(data.lastmod*1000).toISOString().slice(0,10)
-        // https://caniuse.com/#search=MAP
-        const tags = data.tags.map(function(value) {
-          return value.toLowerCase().replace(' ', '-')
-        })
-        data.tags_text = tags.join(', ')
-        return data
-      }
-    }
-  })
-);
-
-search.addWidget(
-  instantsearch.widgets.searchBox({
-    container: '#search-box',
-    placeholder: 'Search'
-  })
-);
-
-search.addWidget(
+    cssClasses: {
+      list: 'list',
+    },
+  }),
   instantsearch.widgets.pagination({
     container: '#pagination',
-    maxPages: 20,
-    // default is to scroll to 'body', here we disable this behavior
-    // scrollTo: false
-  })
-);
+    scrollTo: '#hits',
+    cssClasses: {
+      root: 'root',
+      list: 'pagination',
+      disabledItem: 'disabledItem',
+      selectedItem: 'selectedItem',
+    },
+  }),
+]);
 
 search.start();
