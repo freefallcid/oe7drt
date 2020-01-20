@@ -34,6 +34,7 @@ You may know other package managers commands, but I only use those two at the
 moment.
 
 This is an example on actual images that I process:
+
 ```
  33K 00_locales.png
  61K 01_control-software.png
