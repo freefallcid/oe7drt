@@ -32,3 +32,28 @@ sudo port install optipng pngcrush advancecomp
 
 You may know other package managers commands, but I only use those two at the
 moment.
+
+This is an example on actual images that I process:
+```
+ 33K 00_locales.png
+ 61K 01_control-software.png
+157K 02_mmdvmhost.png
+184K 03_general.png
+187K 04_dmrconfig.png
+ 69K 05_exp_mmdvmhost-dmrnetwork.png
+212K 06_exp_dmrgw-dmrnetwork1.png
+236K 07_exp_dmrgw-dmrnetwork2.png
+```
+
+Three to four minutes later (all three commands):
+
+```
+ 17K 00_locales.png
+ 33K 01_control-software.png
+ 81K 02_mmdvmhost.png
+ 98K 03_general.png
+ 97K 04_dmrconfig.png
+ 32K 05_exp_mmdvmhost-dmrnetwork.png
+127K 06_exp_dmrgw-dmrnetwork1.png
+144K 07_exp_dmrgw-dmrnetwork2.png
+```
