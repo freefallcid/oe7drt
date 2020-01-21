@@ -40,6 +40,13 @@ sudo port install optipng pngcrush advancecomp
 or if you use homebrew
 
 ```
+brew install 
+
+You may know other package managers commands, but I only use those two at the
+moment.
+or if you use homebrew
+
+```
 brew install optipng pngcrush advancecomp
 ```
 
