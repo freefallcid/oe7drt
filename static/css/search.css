@@ -71,15 +71,33 @@
   /*height: 130px;*/
   border: 1px solid #f3f3f3;
 }
+.hit:hover {
+  background-color: #e2e2e2;
+  -webkit-transition: 250ms linear 0s;
+  -moz-transition: 250ms linear 0s;
+  -o-transition: 250ms linear 0s;
+  transition: 250ms linear 0s;
+}
 .hit mark {
   font-style: normal;
   background: #ffffd4;
   text-decoration: underline;
 }
-.hit a {
+.hit a, .hit a:hover, .hit a:focus {
   text-decoration: none;
   color: #333333;
+/*  text-shadow: none;
+  -webkit-transition: 250ms linear 0s;
+  -moz-transition: 250ms linear 0s;
+  -o-transition: 250ms linear 0s;
+  transition: 250ms linear 0s;
+  outline: 0 none;*/
 }
+/*.hit a:hover, .hit a:focus {
+  color: #6f6f6f;
+  background-color: #333;
+  text-shadow: -1px 1px 8px #6f6f6f, 1px -1px 8px #6f6f6f;
+}*/
 .hit .hit-summary {
 /*  height: 130px;
   width: 130px;*/
