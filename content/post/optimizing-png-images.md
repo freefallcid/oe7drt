@@ -1,6 +1,6 @@
 +++
 title = "Optimizing PNG Images"
-summary = "A quick notice about three very handy tools to optimize PNG images on the command line. They work on linux and macOS."
+summary = "A quick notice about three very handy tools to optimize PNG images on the command line. They work on linux and macOS. Use jpegtran for JPG images."
 date = 2020-01-20T20:34:20+01:00
 tags = ["notes"]
 
@@ -14,6 +14,12 @@ I found them quite handy ;-)
 find . -type f -name "*.png"  -print0 | xargs -0 -I {} optipng -nb -nc "{}"
 find . -type f -name "*.png"  -print0 | xargs -0 -I {} advpng -z4 "{}"
 find . -type f -name "*.png"  -print0 | xargs -0 -I {} pngcrush -rem gAMA -rem alla -rem cHRM -rem iCCP -rem sRGB -rem time -ow "{}"
+```
+
+Use jpegtran for JPG images.
+
+```
+jpegtran -copy none -optimize -progressive -outfile output.jpg input.jpg
 ```
 
 You may need to install these tools first.
@@ -58,3 +64,4 @@ Three to four minutes later (all three commands):
 127K 06_exp_dmrgw-dmrnetwork1.png
 144K 07_exp_dmrgw-dmrnetwork2.png
 ```
+
