@@ -29,10 +29,10 @@ search.addWidgets([
 ]);
 
 var hitTemplate =
-  '<div class="hit">' +
+  '<div class="hit"><a href="{{url}}">' +
   '<h4 class="hit-heading">{{title}}</h4>' +
   '<p class="hit-summary">{{summary}}</p>' +
-  '</div>';
+  '</a></div>';
 
 var noResultsTemplate =
   '<div class="text-center">No results found matching <strong>{{query}}</strong>.</div>';

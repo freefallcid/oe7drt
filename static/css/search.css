@@ -76,6 +76,10 @@
   background: #ffffd4;
   text-decoration: underline;
 }
+.hit a {
+  text-decoration: none;
+  color: #333333;
+}
 .hit .hit-summary {
 /*  height: 130px;
   width: 130px;*/
@@ -89,3 +93,4 @@
   font-weight: normal;
   font-size: 18px;
 }
+
