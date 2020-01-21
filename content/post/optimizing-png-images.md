@@ -2,6 +2,7 @@
 title = "Optimizing PNG Images"
 summary = "A quick notice about three very handy tools to optimize PNG images on the command line. They work on linux and macOS. Use jpegtran for JPG images."
 date = 2020-01-20T20:34:20+01:00
+lastmod = 2020-01-21T18:29:36+01:00
 tags = ["notes"]
 
 +++
@@ -36,8 +37,13 @@ On macOS
 sudo port install optipng pngcrush advancecomp
 ```
 
-You may know other package managers commands, but I only use those two at the
-moment.
+or if you use homebrew
+
+```
+brew install optipng pngcrush advancecomp
+```
+
+You may know other package managers commands, but I only use these.
 
 This is an example on actual images that I process:
 
