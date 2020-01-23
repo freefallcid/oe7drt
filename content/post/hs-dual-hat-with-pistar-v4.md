@@ -1,9 +1,8 @@
 +++
 title = "Hs Dual Hat With Pistar v4"
 summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_Austria_2321** as master servers."
-date = 2020-01-21T00:57:05+01:00
+date = 2020-01-23T15:03:35+01:00
 tags = ["mmdvm","pi-star","ham radio"]
-draft = true
 
 +++
 
@@ -92,6 +91,9 @@ sudo apt-get install htop lsof nmap arping vnstat
 
 #### If you intent to install and use vnstat, you need to set it up
 
+The installation of vnstat is useful, if you let your pi-star run 24/7 as the
+database gets cleared on every reboot!
+
 Add the following line to your `/etc/fstab` file -- I assume that you still
 have the filesystem writable.
 
@@ -142,8 +144,8 @@ look similar to this one:
 ``` shell
                       rx      /      tx      /     total    /   estimated
  wlan0:
-       Jän '20      4,18 MiB  /    9,11 MiB  /   13,29 MiB  /   20,00 MiB
-         today      4,18 MiB  /    9,11 MiB  /   13,29 MiB  /      14 MiB
+       Jän '20     39,23 MiB  /   39,10 MiB  /   78,33 MiB  /  106,00 MiB
+         today     39,23 MiB  /   39,10 MiB  /   78,33 MiB  /     138 MiB
 ```
 
 It takes time to gather enough information. Get back to this in a few days and
@@ -186,8 +188,7 @@ Specifically these talkgroups are:
   - {{< badge "primary" >}}TG 8191{{< /badge >}} -
     {{< badge "primary" >}}TG 8199{{< /badge >}}
 - {{< badge "success" >}}GPS data{{< /badge >}} sent as private calls
-  to {{< badge "primary" >}}9055{{< /badge >}} -
-  {{< badge "primary" >}}9060{{< /badge >}}
+  to {{< badge "primary" >}}262999{{< /badge >}}
 
 All other talkgroups are used with the Brandmeister network.
 
@@ -252,6 +253,13 @@ That will also include talk group 20 from timeslot 1. I thought you can
 statically link up to 5 talkgroups, but I'm not sure if this information is up
 to date (I haven't tried this yet, but you can do that on your own very easy).
 
+Note, that I used the german Brandmeister server instead of the austrian one --
+this is because I had problem with APRS with the austrian server. Problems were
+gone when I switched to the german server.
+
+*Maybe the 262999 does not get routed correctly on BM_Austria 2321 -- who
+knows...*
+
 ### Move over to the expert configuration tab
 
 #### Quick edit
@@ -285,7 +293,7 @@ This configuration file is split into paragraphs. Look out for the
 ```
 [DMR Network 1]
 Enabled=1
-Address=94.199.173.125
+Address=87.106.126.49
 Port=62031
 TGRewrite0=2,8,2,8,1
 PCRewrite0=2,84000,2,84000,1001
@@ -298,7 +306,7 @@ PassAllTG1=2
 Password="***"
 Debug=0
 Id=232718001
-Name=BM_Austria_2321
+Name=BM_Germany_2621
 ```
 
 Our next block is called **\[DMR Network 2]**.
@@ -314,9 +322,7 @@ TGRewrite2=1,100,1,100,100
 TGRewrite3=2,232,2,232,1
 TGRewrite4=2,8181,2,8181,9
 TGRewrite5=2,8191,2,8191,9
-TGRewrite6=1,9055,1,9055,6
-TGRewrite7=2,9055,2,9055,6
-TGRewrite8=2,9,2,9,1
+TGRewrite6=2,9,2,9,1
 PCRewrite0=1,9055,1,9055,6
 PCRewrite1=2,9055,2,9055,6
 PCRewrite2=2,4000,2,4000,1001
