@@ -3,6 +3,7 @@ title = "Hs Dual Hat With Pistar v4"
 summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_German_2621** as master servers."
 date = 2020-01-23T15:03:35+01:00
 tags = ["mmdvm","pi-star","ham radio"]
+draft = "true"
 
 +++
 
