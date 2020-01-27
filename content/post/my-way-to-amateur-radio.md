@@ -103,7 +103,7 @@ transeivers and antennas is planned for November 23 in Innsbruck from 09:00 to
 18:00. At 19:00 a graduation party is planned at the restaurant Deck 47 in
 Innsbruck.
 
-I joined the local ham radio club "ÖVSV" and I am theoretical a member of ADL714.
+I joined the local ham radio club "ÖVSV" and I am a member of ADL714.
 
 ### Slowly
 
