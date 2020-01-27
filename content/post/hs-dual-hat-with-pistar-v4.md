@@ -196,7 +196,7 @@ sudo systemctl restart vnstatd
 Now run `vnstat` to display network interface statistics. It's output could
 look similar to this one:
 
-``` shell
+```
                       rx      /      tx      /     total    /   estimated
  eth0: Not enough data available yet.
  wlan0:
@@ -254,7 +254,8 @@ Specifically these talkgroups are:
 - {{< badge "success" >}}GPS data{{< /badge >}} sent as private calls
   to {{< badge "primary" >}}9057{{< /badge >}}
 
-All other talkgroups are used with the Brandmeister network.
+All other talkgroups are routed to the Brandmeister network. Private calls are
+also routed to Brandmeister.
 
 ### Simplex or Duplex?
 
