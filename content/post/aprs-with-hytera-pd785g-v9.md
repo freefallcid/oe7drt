@@ -49,7 +49,8 @@ You can also use any of those number-symbol combinations.
 Setup the channel like this. Just make sure to set {{< badge >}}Location Info
 Revert Channel{{< /badge >}}. I did not select {{< badge >}}IP Multi-site
 Connect{{< /badge >}} and I also did not select an {{< badge >}}RRS Revert
-Channel{{< /badge >}}.
+Channel{{< /badge >}}. I am not 100% sure, but I think the *RRS Revert Channel*
+is what makes your HT send your position out when you change channels.
 
 ![channel settings](/images/post/2020/01/hyt_04_channel.png)
 
