@@ -82,13 +82,69 @@ Choose the locales that you need or want. My setup looks like this:
 
 If you don't know what to choose, go with your language and the UTF-8 version.
 
+I also create my ssh-keys for passwordless login as well as some comfortable
+aliases. I usually use the ZSH shell, but on Pi-Star I just leave it as it was.
+I add my aliases to `.bash_aliases` -- this is the file that gets sourced via
+`.bashrc` in the default pi-star setup.
+
+Quick and dirty -- my current `.bash_aliases` on my Pi-Stars looks like this:
+
+``` bash
+DATE=$(date +%Y-%m-%d)
+PI=/var/log/pi-star/
+DMRGW=${PI}DMRGateway-${DATE}.log
+MMDVM=${PI}MMDVM-${DATE}.log
+DAPNET=${PI}DAPNETGateway-${DATE}.log
+
+[ -x /usr/bin/pydf ] && alias df='/usr/bin/pydf' || alias df='df -h'
+
+alias digg='dig +noall +answer'
+alias dt='dmesg | tail'
+
+alias mm="multitail ${DMRGW} ${MMDVM}"
+alias mmdmr="multitail ${DMRGW}"
+alias mmdv="multitail ${MMDVM}"
+alias mmdap="multitail ${DAPNET}"
+
+# Screen and Tmux alike
+alias sc='screen -DR Screen_A'
+alias tm='tmux -u new-session -A -s Tmux_A'
+
+# ls
+alias l='ls -1A'
+alias la='ls -lah'
+alias lc='lt -c'
+alias lk='ll -Sr'
+alias ll='ls -lh'
+alias lad='ls -lah|more'
+alias lld='ls -lh|more'
+alias lm='la | "$PAGER"'
+alias ln='nocorrect ln -i'
+alias lni='nocorrect ln -i'
+alias locate='noglob locate'
+alias lr='ll -R'
+alias ls='ls --group-directories-first --color=auto'
+alias lt='ll -tr'
+alias lu='lt -u'
+alias lx='ll -XB'
+
+alias ducks='du -cks * | sort -rn | head'
+
+alias confcat="sed -e 's/#.*//;/^\s*$/d' "$@""
+```
+
 ### Optional
 
 More software that comes in handy from time to time.
 
 ```
-sudo apt-get install htop lsof nmap arping vnstat
+sudo apt-get install htop lsof nmap arping vnstat vim pydf
 ```
+
+`pydf` in combination with the alias from above displays a short and colored
+output when you list your diskspace with `df`.
+
+![an example output of `pf`](/images/post/2020/01/11_df_output.png)
 
 #### If you intent to install and use vnstat, you need to set it up
 
@@ -127,16 +183,14 @@ tmpfs           /var/spool/exim4/input  tmpfs nodev,noatime,nosuid,mode=0750,siz
 tmpfs           /var/spool/exim4/msglog tmpfs nodev,noatime,nosuid,mode=0750,size=64k   0     0
 ```
 
-Now create the directory where vnstat saves its database.
+Normally, vnstat creates `/var/lib/vnstat` and starts the vnstat service. We now
+delete the freshly created databases (they are nearly empty anyway) and
+re-create them when we have mounted the ramdisk.
 
 ```
-sudo mkdir /var/lib/vnstat
-```
-
-Finally mount the ramdisk into the filesystem
-
-```
+sudo rm /var/lib/vnstat/*
 sudo mount -a
+sudo systemctl restart vnstatd
 ```
 
 Now run `vnstat` to display network interface statistics. It's output could
@@ -144,13 +198,22 @@ look similar to this one:
 
 ``` shell
                       rx      /      tx      /     total    /   estimated
+ eth0: Not enough data available yet.
  wlan0:
        Jän '20     39,23 MiB  /   39,10 MiB  /   78,33 MiB  /  106,00 MiB
          today     39,23 MiB  /   39,10 MiB  /   78,33 MiB  /     138 MiB
 ```
 
 It takes time to gather enough information. Get back to this in a few days and
-you will get more useful information.
+you will get more useful information. Because we save the databases in the
+ramdisk, we will save the sdcards lifetime, but also we loose the statistics
+when we reboot the raspberry pi.
+
+{{< background "warning" >}}
+If you want to save them forever, you won't have
+to create a ramdisk like above, but <strong>you also have to make sure that
+PiStar does not mount the volumes read-only!</strong>
+{{< /background >}}
 
 ## Make the filesystem read-only again
 
