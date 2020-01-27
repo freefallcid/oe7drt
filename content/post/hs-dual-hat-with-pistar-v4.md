@@ -2,7 +2,7 @@
 title = "Hs Dual Hat With Pistar v4"
 summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_Germany_2622** as master servers. I also use **DAPNET** and **PiStar Remote**."
 date = 2020-01-23T15:03:35+01:00
-lastmod = 2020-01-27T02:35:18+01:00
+lastmod = 2020-01-27T14:34:12+01:00
 tags = ["dmr","mmdvm","pi-star","ham radio"]
 
 +++
@@ -40,7 +40,7 @@ about digital amateur radio.
 <https://www.youtube.com/channel/UC6Us7z_gkxNKc0PcCuS7fYQ/videos>  
 The youtube channel of Winters Huang BI7JTA. He writes also on his [blog]. If
 you want a nice duplex hotspot with fancy acrylic "L" case and nextion display
-you want to have a look at his [shop].
+you want to have a look at [his shop].
 
 [blog]: https://mmdvm.bi7jta.org/
 [shop]: https://www.bi7jta.org/cart/
@@ -263,19 +263,19 @@ This is where we actually start. At the first start either connect your
 Raspberry Pi to an ethernet port or look out for a WiFi network called
 Pi-Star Setup.
 
-![Control Software](/images/post/2020/01/01_control-software.png)
+![Control Software configuration](/images/post/2020/01/01_control-software.png)
 
 Make sure to use Duplex Repeater in order to use different RX and TX frequencies.
 
 ### MMDVMHost
 
-![Control Software](/images/post/2020/01/02_mmdvmhost.png)
+![MMDVMHost configuration](/images/post/2020/01/02_mmdvmhost.png)
 
 Choose the modes that you want to use. I only use DMR and POCSAG for now.
 
 ### General information about the station
 
-![Control Software](/images/post/2020/01/03_general.png)
+![general information](/images/post/2020/01/03_general.png)
 
 Put in your own callsign and your DMR-ID --
 [register your callsign](https://register.ham-digital.org/) if you don't have
@@ -292,13 +292,13 @@ one system at a time and move over to DMRGateway when you feel confident enough.
 The rewrite rules can be sometimes a bit tricky to set up.
 {{< /background >}}
 
-![Control Software](/images/post/2020/01/04_dmrconfig.png)
+![DMR configuration](/images/post/2020/01/04_dmrconfig.png)
 
 Choose the Brandmeister master server you want to connect to. Also set a
 password in [Brandmeisters SelfCare](https://brandmeister.network/?page=selfcare)
 for Hotspot Security. That makes sure, that only you can add a Hotspot with your
-callsign. Also select the IPSC2 server of your choice and set the wanted options. I go
-with these:
+callsign. Also select the IPSC2 server of your choice and set the wanted
+options. I go with these:
 
 ```
 StartRef=4197;RelinkTime=15;UserLink=1;TS2_1=232;TS2_2=8189;
@@ -329,14 +329,14 @@ experimenting with this. I read a lot of times that `1000` should be fine with
 slower networks -- but you should definitely experiment yourself a bit with this
 setting.
 
-![Control Software](/images/post/2020/01/05_exp_mmdvmhost-dmrnetwork.png)
+![DMR jitter configuration](/images/post/2020/01/05_exp_mmdvmhost-dmrnetwork.png)
 
 Now let's have a look at the DMR Gateway configuration. Navigate to the DMR GW
 expert settings. Choose **DMR GW** of the upper line (Quick Edit).
 
-![Control Software](/images/post/2020/01/06_exp_dmrgw-dmrnetwork1.png)
+![DMR Network 1 configuration](/images/post/2020/01/06_exp_dmrgw-dmrnetwork1.png)
 
-![Control Software](/images/post/2020/01/07_exp_dmrgw-dmrnetwork2.png)
+![DMR Network 2 configuration](/images/post/2020/01/07_exp_dmrgw-dmrnetwork2.png)
 
 Don't forget to save the settings.
 
@@ -404,7 +404,7 @@ frequencies in your country. You may use 439.987.500 in Germany.
 more frequencies.
 {{< /background >}}
 
-![pocsag](/images/post/2020/01/10_pocsag.png)
+![POCSAG configuration](/images/post/2020/01/10_pocsag.png)
 
 Read more on <https://hampager.de> and on <https://support.hampager.de>. You
 need to create an account to bind your callsign to a RIC. You also need a
@@ -412,12 +412,12 @@ second account for your transmitter - that is when you get your AuthKey.
 
 ## That's it - images and videos
 
-I suppose this gets easier from time to time -- depending on how ofter I have to
+I suppose this gets easier from time to time -- depending on how often I have to
 install this stuff on a Pi :-)
 
 ### There is a picture of my Raspberry Pi 3
 
-![Control Software](/images/post/2020/01/08_raspberrypi.jpg)
+![my raspberry pi 3](/images/post/2020/01/08_raspberrypi.jpg)
 
 ### And this is the admin page of the dashboard
 
@@ -426,7 +426,7 @@ expert settings and choose **BM API** in the lower line. It is somewhat in the
 middle of the page. To get an api key visit the
 [Brandmeister API Keys page](https://brandmeister.network/?page=profile-api).
 
-![Control Software](/images/post/2020/01/09_dashboard-admin.png)
+![Dashboard - Admin view](/images/post/2020/01/09_dashboard-admin.png)
 
 There are some more handy links for Brandmeister:
 
