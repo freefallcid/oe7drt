@@ -35,6 +35,18 @@ My QTH is **Längenfeld** [^lgfd] - the locator for that is
   CPS is very buggy and my device does not get recognised from Windows
   (I tried three different windows notebooks)
 
+## Contact
+
+I guess the contact form would be the easiest way to contact me -- I will
+implement a form very soon. I just haven't found the time for that until now.
+
+You can also contact me on these channels:
+
+- direct email
+- Telegram
+- WhatsApp
+- Brandmeister SMSC (262995)
+
 ## Other resources
 
 I used to maintain a broader range of topics on my other website
