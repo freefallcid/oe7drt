@@ -1,9 +1,9 @@
 +++
 title = "Hs Dual Hat With Pistar v4"
-summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_German_2621** as master servers."
+summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_Germany_2622** as master servers. I also use **DAPNET** and **PiStar Remote**."
 date = 2020-01-23T15:03:35+01:00
-tags = ["mmdvm","pi-star","ham radio"]
-draft = "true"
+lastmod = 2020-01-27T02:35:18+01:00
+tags = ["dmr","mmdvm","pi-star","ham radio"]
 
 +++
 
@@ -45,7 +45,7 @@ you want to have a look at his [shop].
 [blog]: https://mmdvm.bi7jta.org/
 [shop]: https://www.bi7jta.org/cart/
 
-{{< alert "danger" >}}
+{{< alert "secondary" >}}
 This part gets probably updated from time to time. At least as long new websites
 come back to my memory ;-)
 {{< /alert >}}
@@ -171,7 +171,7 @@ wait a few seconds &ndash; this takes some time to complete ;-)
 
 ### Talkgroup setup
 
-This setup uses some talk groups from IPSC2 and the rest from Brandmeister.
+This setup uses some talk groups from IPSC2/DMR+ and the rest from Brandmeister.
 Specifically these talkgroups are:
 
 - {{< badge "secondary" >}}Timeslot 1{{< /badge >}}
@@ -182,14 +182,14 @@ Specifically these talkgroups are:
   - {{< badge "primary" >}}TG 100{{< /badge >}} -
     {{< badge "primary" >}}TG 199{{< /badge >}}
 - {{< badge "danger" >}}Timeslot 2{{< /badge >}}
-  - reflectors with {{< badge "primary" >}}TG 9{{< /badge >}}
+  - DMR+ reflectors with {{< badge "primary" >}}TG 9{{< /badge >}}
   - {{< badge "primary" >}}TG 232{{< /badge >}}
   - {{< badge "primary" >}}TG 8181{{< /badge >}} -
     {{< badge "primary" >}}TG 8189{{< /badge >}}
   - {{< badge "primary" >}}TG 8191{{< /badge >}} -
     {{< badge "primary" >}}TG 8199{{< /badge >}}
 - {{< badge "success" >}}GPS data{{< /badge >}} sent as private calls
-  to {{< badge "primary" >}}262999{{< /badge >}}
+  to {{< badge "primary" >}}9057{{< /badge >}}
 
 All other talkgroups are used with the Brandmeister network.
 
@@ -207,7 +207,7 @@ Make sure to use Duplex Repeater in order to use different RX and TX frequencies
 
 ![Control Software](/images/post/2020/01/02_mmdvmhost.png)
 
-Choose the modes that you want to use. I only use DMR for now.
+Choose the modes that you want to use. I only use DMR and POCSAG for now.
 
 ### General information about the station
 
@@ -254,13 +254,6 @@ That will also include talk group 20 from timeslot 1. I thought you can
 statically link up to 5 talkgroups, but I'm not sure if this information is up
 to date (I haven't tried this yet, but you can do that on your own very easy).
 
-Note, that I used the german Brandmeister server instead of the austrian one --
-this is because I had problem with APRS with the austrian server. Problems were
-gone when I switched to the german server.
-
-*Maybe the 262999 does not get routed correctly on BM_Austria 2321 -- who
-knows...*
-
 ### Move over to the expert configuration tab
 
 #### Quick edit
@@ -294,7 +287,7 @@ This configuration file is split into paragraphs. Look out for the
 ```
 [DMR Network 1]
 Enabled=1
-Address=87.106.126.49
+Address=178.238.234.72
 Port=62031
 TGRewrite0=2,8,2,8,1
 PCRewrite0=2,84000,2,84000,1001
@@ -307,7 +300,7 @@ PassAllTG1=2
 Password="***"
 Debug=0
 Id=232718001
-Name=BM_Germany_2621
+Name=BM_Germany_2622
 ```
 
 Our next block is called **\[DMR Network 2]**.
@@ -337,7 +330,23 @@ Options="StartRef=4197;RelinkTime=15;UserLink=1;TS2_1=232;TS2_2=8189;"
 [Read along here](https://github.com/g4klx/DMRGateway/wiki/Rewrite-Rules)
 if you want to know more about the different rewrite rules.
 
-## That's it
+### POCSAG configuration
+
+{{< background "warning" >}}
+<strong>Info:</strong> The following frequency is used in Austria. Please
+refer to your local amateur radio club for information about the used
+frequencies in your country. You may use 439.987.500 in Germany.
+<a href="https://hampager.de/dokuwiki/doku.php?id=dapnetfrq">See here</a> for
+more frequencies.
+{{< /background >}}
+
+![pocsag](/images/post/2020/01/10_pocsag.png)
+
+Read more on <https://hampager.de> and on <https://support.hampager.de>. You
+need to create an account to bind your callsign to a RIC. You also need a
+second account for your transmitter - that is when you get your AuthKey.
+
+## That's it - images and videos
 
 I suppose this gets easier from time to time -- depending on how ofter I have to
 install this stuff on a Pi :-)
@@ -355,10 +364,56 @@ middle of the page. To get an api key visit the
 
 ![Control Software](/images/post/2020/01/09_dashboard-admin.png)
 
-There are some more handy links for Brandmeister if you like:
+There are some more handy links for Brandmeister:
 
 - [list connected hotspots to the Austrian BM_2321 server][list]
 - [last heard on this specific master server][lh]
 
 [list]: http://94.199.173.125/status/list.htm
 [lh]: https://brandmeister.network/?page=lh&Master=2321
+
+### PiStar Remote
+
+Restart the PiStar services with RF power from your HT.
+
+{{< youtube lTh1p-eVGxQ >}}
+
+Or reboot the whole Raspberry Pi.
+
+{{< youtube hFyEL6kfRco >}}
+
+To make use of PiStar Remote you need to set it up. Go to *Configuration ->
+Expert* and choose *PiStar Remote* (in the Full Edit line).
+
+```
+[enable]
+# Is the Pi-Star Remote Enabled? (true|false)
+enabled=true
+
+...
+
+[dmr]
+# TG commands
+#svckill=8999999
+svcrestart=8999998
+reboot=8999997
+#shutdown=8999996
+#hostfiles=9999995
+```
+
+## Final words
+
+I think this whole article is a *work in progress* -- I just always find things
+that I do different now and I cannot always change these things in this article
+too; some aren't even wrong, they just fit better.
+
+I think this page is a good thing to look back to start a fresh configuration --
+even if I have made different configuration backups from within PiStar.
+Addidionally I made one-to-one copies of the used sdcards -- just in case ;-)
+
+Initially I wrote this for myself, but I think this might be helpful for others
+too so enjoy the content and feel free to mail me if you find errors or have
+to add some notes on that topic.
+
+PS: I will add a contact form on this website soon. You can contact me via
+the [Brandmeister network (SMSC)](http://wiki.bm262.de/doku.php?id=servicenummer#smsc) too if you like.
