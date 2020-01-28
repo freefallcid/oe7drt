@@ -1,5 +1,5 @@
 +++
-title = "Hs Dual Hat With Pistar v4"
+title = "Hs Dual Hat With PiStar v4"
 summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_Germany_2622** as master servers. I also use **DAPNET** and **PiStar Remote**."
 date = 2020-01-23T15:03:35+01:00
 lastmod = 2020-01-27T14:34:12+01:00
