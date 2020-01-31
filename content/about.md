@@ -46,6 +46,10 @@ You can also contact me on these channels:
 - Telegram
 - WhatsApp
 - Brandmeister SMSC (262995)
+- DAPNET OE7DRT
+- DMR Reflector 4197 or Brandmeister TG 2327
+
+![eQSL certified authority](/images/eqsl_auth_cert.png)
 
 ## Other resources
 
