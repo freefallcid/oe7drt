@@ -138,7 +138,7 @@ alias confcat="sed -e 's/#.*//;/^\s*$/d' "$@""
 More software that comes in handy from time to time.
 
 ```
-sudo apt-get install htop lsof nmap arping vnstat vim pydf
+sudo apt-get install htop lsof nmap arping vnstat vim pydf multitail
 ```
 
 `pydf` in combination with the alias from above displays a short and colored
@@ -478,6 +478,3 @@ Addidionally I made one-to-one copies of the used sdcards -- just in case ;-)
 Initially I wrote this for myself, but I think this might be helpful for others
 too so enjoy the content and feel free to mail me if you find errors or have
 to add some notes on that topic.
-
-PS: I will add a contact form on this website soon. You can contact me via
-the [Brandmeister network (SMSC)](http://wiki.bm262.de/doku.php?id=servicenummer#smsc) too if you like.
