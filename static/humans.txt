@@ -15,3 +15,4 @@
                 Netlify CI <https://www.netlify.com>
                 Github <https://github.com>
                 Sublime Merge <https://www.sublimemerge.com>
+                Gimp <https://www.gimp.org>
