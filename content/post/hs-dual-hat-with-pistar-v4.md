@@ -2,7 +2,7 @@
 title = "Hs Dual Hat With PiStar v4"
 summary = "This is a MMDVM_HS_Dual_Hat hotspot in duplex mode with DMRGateway and an actual Pi-Star image. In this setup I use **DMR+_IPSC2-OE-DMO** and **BM_Germany_2622** as master servers. I also use **DAPNET** and **PiStar Remote**."
 date = 2020-01-23T15:03:35+01:00
-lastmod = 2020-01-27T14:34:12+01:00
+lastmod = 2020-02-15T18:05:40+01:00
 tags = ["dmr","mmdvm","pi-star","ham radio"]
 
 +++
@@ -415,7 +415,7 @@ second account for your transmitter - that is when you get your AuthKey.
 I suppose this gets easier from time to time -- depending on how often I have to
 install this stuff on a Pi :-)
 
-### There is a picture of my Raspberry Pi 3
+### My Raspberry Pi 3 B
 
 ![my raspberry pi 3](/images/post/2020/01/08_raspberrypi.jpg)
 
