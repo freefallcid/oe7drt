@@ -3,7 +3,6 @@ title = "Mountint Ext4 Filesystem on macOS Readonly"
 summary = "An overview of how to mount your Pi-Star sdcard on a mac machine."
 date = 2020-02-22T09:33:44+01:00
 tags = ["pi-star","macOS"]
-draft = true
 
 +++
 
