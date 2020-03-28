@@ -2,6 +2,7 @@
 title = "Get DMRIDs Via Command Line"
 summary = "This is a quick workaround to retrieve a DMRID on console or terminal. This comes in handy when you don't have a browser window open or not even a graphical setup running. The script uses w3m to retrieve website content from ham-digital.org. It's also usable when piping its output to a file."
 date = 2020-02-04T13:05:25+01:00
+lastmod=2020-03-28T16:36:28+01:00
 tags = ["dmr","ham radio","pi-star","script"]
 
 +++
@@ -85,3 +86,48 @@ them into clipboard (on a mac only) with `cat ids | pbcopy`.
 ```
 
 *I've been anonymizing the data a bit.*
+
+## Partially known callsign
+
+***I anonymized some DMR-IDs on this website.***
+
+So you know only the three last letters of an austrian callsign and want to
+know quickly what federal state it was? Run this command and you'll get a
+quick answer on the command line:
+
+```
+for i in oe{1..9}drt; do call $i; done
+2327180 OE7DRT Dominic
+```
+
+If you called your script `call` and if `call` is in your `$PATH`.
+
+This works also if you missed one letter.
+
+```
+for i in oe7{a..z}rt; do call $i; done
+2327XXX OE7BRT Rainer
+2327180 OE7DRT Dominic
+2327XXX OE7JRT Josef
+```
+
+This took 7 seconds on my computer.
+
+Or even with more letters, but this will take a while, since this will start
+**676 (26 x 26) website lookups to ham-digital.org** -- maybe they'll block
+your IP address quickly, if you hammer their server with so many request in a
+short period of time.
+
+```
+for i in oe7d{a..z}{a..z}; do call $i; done
+2327XXX OE7DDI Daniel
+2327XXX OE7DHT Hermann
+2327XXX OE7DJJ Josef
+2327XXX OE7DMJ Dragan
+2327XXX OE7DPJ Peter
+2327180 OE7DRT Dominic
+2327XXX OE7DWT Wechselberger
+2327XXX OE7DXT Gernot
+```
+
+And this ran for 3 minutes and 17 seconds on my computer.
