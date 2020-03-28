@@ -153,5 +153,7 @@ bumping</a> a shitload of topics.
 </strike><br>
 I won't fetch a new version any more. In fact, I'm looking where I saved the old
 one to get it back online. I could possibly replace the css files in the code to
-host it without issues via Netlify. Maybe, or maybe not. Time will tell.
+host it without issues via Netlify. Maybe, or maybe not. Time will tell.<br>
+<br><strong>Update on March 28 2020</strong><br>Time... I guess I won't update
+this ever.
 {{< /alert >}}
