@@ -18,7 +18,7 @@ http://oe7drt.at/* https://oe7drt.com/ 301!
 #/portfolio/software/       /categories/software/ 301
 #/portfolio/fotografie/     /about/ 301
 #/about/                    /oe7drt/ 301
-/blog/my-way-to-ham-radio/  /blog/my-way-to-amateur-radio/
+/blog/my-way-to-ham-radio/  /blog/my-way-to-amateur-radio/ 301!
 
 
 # ----------------------------------------------------------------------
@@ -35,19 +35,19 @@ http://oe7drt.at/* https://oe7drt.com/ 301!
 # Sitemap redirects
 # ----------------------------------------------------------------------
 
-/sitemap.xml.gz /sitemap.xml 301
+/sitemap.xml.gz /sitemap.xml 301!
 
 # ----------------------------------------------------------------------
 # Feed redirects
 # ----------------------------------------------------------------------
 
-/atom /index.xml 301
-/rss /index.xml 301
-/feed.xml /index.xml 301
-/til.xml /index.xml 301
-/feed.json /index.json 301
+/atom /index.xml 301!
+/rss /index.xml 301!
+/feed.xml /index.xml 301!
+/til.xml /index.xml 301!
+/feed.json /index.json 301!
 
-/articles.xml     /index.xml 301
-/recipes.xml      /index.xml 301
-/photography.xml  /index.xml 301
-/timelapse.xml    /index.xml 301
+/articles.xml     /index.xml 301!
+/recipes.xml      /index.xml 301!
+/photography.xml  /index.xml 301!
+/timelapse.xml    /index.xml 301!
