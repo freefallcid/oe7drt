@@ -107,8 +107,6 @@ I guess the best thing here is to read along the links on the github repo. Also
 have a look for files that end with `.md` -- those are Markdown files and
 contain useful information most of the time.
 
-![Make the modem flashable](/images/pages/hotspot_firmware.jpg)
-
 ```
 #if !defined(CONFIG_H)
 #define  CONFIG_H
@@ -129,6 +127,20 @@ contain useful information most of the time.
 
 #endif
 ```
+
+![Make the modem flashable](/images/pages/hotspot_firmware.jpg)
+
+Flashing will fail when you try to flash the firmware without this connection.
+
+![Flashing](/images/pages/hotspot_flashing.jpg)
+
+But it helps when you got a pair of tweezers in you house. Just make sure to get
+good contact to the metal.
+
+{{< alert "danger" >}}Flashing will fail if you cannot hold this steady
+for the whole flashing process!{{< /alert >}}
+
+When it fails, just flash again until you get 100%. Reboot the device after that.
 
 https://github.com/juribeparada/MMDVM_HS
 
