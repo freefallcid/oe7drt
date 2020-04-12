@@ -24,31 +24,84 @@ nothing is found.
 
 ``` bash
 #!/bin/bash
-# Author: Dominic OE7DRT, <https://oe7drt.com>
+# Get DMR-IDs from CALLSIGN or CALLSIGN from DMR-ID or vice versa
+# Author: Dominic Reich, OE7DRT
+# File:   ~/bin/call
+#
+# Last modified: 2020-04-12 13:26:36+0200
+#
+# Inspired from this beautiful article:
+#   https://pretzelhands.com/posts/command-line-flags
+#
+# Good DX and vy 73 de OE7DRT
 
-# test if w3m is installed
-command -v w3m >/dev/null 2>&1 || { echo >&2 "w3m not found.  Aborting."; exit 1; }
+command -v w3m > /dev/null 2>&1 || { echo >&2 "w3m not found"; exit 1; }
 
-# define some variables
-CALL=$(echo ${1} | tr a-z A-Z)
-FILE=/tmp/${CALL}
+print_usage () {
+  echo >&2 "usage: `basename $0` [dmr_id | callsign]"
+  exit 1
+}
 
-# get the website
-w3m "https://ham-digital.org/dmr-userreg.php?callsign=${CALL}" > ${FILE}
+if [ $# -ne 1 ]
+then
+  print_usage
+fi
 
-# count number of ids
-c=$(grep ${CALL} ${FILE} | wc -l | xargs)
+getID () {
+  CALL=`echo $1 | tr a-z A-Z`
+  FILE=/tmp/$CALL
+  w3m "https://ham-digital.org/dmr-userreg.php?callsign=$CALL" > $FILE
+  c=`grep $CALL $FILE | wc -l | xargs`
 
-# display ids one by one (only dmrid,callsign,name)
-while [ $c -gt 0 ]
-do
-  OUT=$(grep ${CALL} ${FILE} | head -n $c | tail -n 1 | awk '{ print $2,$4,$5 }')
-  echo $OUT
-  ((c--))
-done
+  while [ $c -gt 0 ]
+  do
+    OUT=`grep $CALL $FILE | head -n $c | tail -n 1 | awk '{ print $4,$5,$2,$3 }'`
+    echo "$OUT"
+    ((c--))
+  done
+  rm $FILE
+}
 
-# delete the temp file
-rm ${FILE}
+getCALLSIGN () {
+  ID=$1
+  FILE=/tmp/$ID
+  w3m "https://ham-digital.org/dmr-userreg.php?usrid=$ID" > $FILE
+  CALL=`grep $ID $FILE | awk '{ print $4 }'`
+  rm $FILE
+  if [ -z $CALL ]
+  then
+    exit 1
+  fi
+  getID $CALL
+}
+
+checkID () {
+  if [[ ! $1 =~ ^[0-9]{7}$ ]]
+  then
+    echo >&2 "no valid dmr_id supplied"
+    exit 1
+  fi
+}
+
+if [ "$1" -eq "$1" ] 2>/dev/null
+then
+  ID="$1"
+  checkID $ID
+else
+  CALL="$1"
+fi
+
+if [ ! -z $ID ]
+then
+  getCALLSIGN $ID
+  exit 0
+elif [ ! -z $CALL ]
+then
+  getID $CALL
+  exit 0
+else
+  print_usage
+fi
 ```
 
 {{< background "primary" >}}
@@ -75,14 +128,13 @@ for i in 7one 7two 1three; do call.sh oe$i ids >>! ids; done
 
 That would fetch 3 callsigns `OE7ONE`, `OE7TWO` and `OE1ONE` and write them
 all into the file `ids`. So run `cat ids` and display them on screen. Or copy
-them into clipboard (on a mac only) with `cat ids | pbcopy`.
+them into clipboard (on a mac only) with `pbcopy < ids`.
 
 ```
-0007001 OE7ONE User1
-0007002 OE7TWO User2
-0007002 OE7TWO User2
-0001002 OE1ONE User3
-0001001 OE1ONE User3
+OE7ONE Username1 0007001 2018-05-12
+OE7TWO Username2 0007003 2018-12-08
+OE7TWO Username2 0007002 2018-11-09
+OE1ONE Username3 0001001 2020-03-13
 ```
 
 *I've been anonymizing the data a bit.*
@@ -97,7 +149,7 @@ quick answer on the command line:
 
 ```
 for i in oe{1..9}drt; do call $i; done
-2327180 OE7DRT Dominic
+OE7DRT Dominic 2327180 2019-11-24
 ```
 
 If you called your script `call` and if `call` is in your `$PATH`.
@@ -106,12 +158,12 @@ This works also if you missed one letter.
 
 ```
 for i in oe7{a..z}rt; do call $i; done
-2327XXX OE7BRT Rainer
-2327180 OE7DRT Dominic
-2327XXX OE7JRT Josef
+OE7BRT Rainer 2327XXX 20XX-XX-XX
+OE7DRT Dominic 2327180 2019-11-24
+OE7JRT Josef 2327XXX 20XX-XX-XX
 ```
 
-This took 7 seconds on my computer.
+This took ~10 seconds on my computer.
 
 Or even with more letters, but this will take a while, since this will start
 **676 (26 x 26) website lookups to ham-digital.org** -- maybe they'll block
@@ -120,14 +172,19 @@ short period of time.
 
 ```
 for i in oe7d{a..z}{a..z}; do call $i; done
-2327XXX OE7DDI Daniel
-2327XXX OE7DHT Hermann
-2327XXX OE7DJJ Josef
-2327XXX OE7DMJ Dragan
-2327XXX OE7DPJ Peter
-2327180 OE7DRT Dominic
-2327XXX OE7DWT Wechselberger
-2327XXX OE7DXT Gernot
+2327XXX OE7D?? Daniel
+2327XXX OE7D?? Hermann
+2327XXX OE7D?? Josef
+2327XXX OE7D?? Dragan
+2327XXX OE7D?? Peter
+2327180 OE7D?? Dominic
+2327XXX OE7D?? Wechselberger
+2327XXX OE7D?? Gernot
 ```
+{{< alert "secondary" >}}
+<strong>Update:</strong> The output above was made with an older version of the script. The output now
+contains also the registration date as seen in previous examples.
+{{< /alert >}}
+
 
 And this ran for 3 minutes and 17 seconds on my computer.
