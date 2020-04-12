@@ -3,6 +3,7 @@ title = "About"
 date = "2020-01-02"
 aliases = ["about-us","oe7drt"]
 #author = "Hugo Authors"
+#robotsdisallow = true
 
 +++
 

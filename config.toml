@@ -4,6 +4,7 @@ defaultContentLanguage = "en"
 title = "OE7DRT"
 theme = "papercss-hugo-theme"
 googleAnalytics = "UA-131656855-5"
+enableRobotsTXT = true
 
 [taxonomies]
   tag = "tags"
