@@ -6,6 +6,10 @@ theme = "papercss-hugo-theme"
 googleAnalytics = "UA-131656855-5"
 enableRobotsTXT = true
 
+[sitemap]
+  ChangeFreq = "weekly"
+  #Priority = "1"
+
 [taxonomies]
   tag = "tags"
 
