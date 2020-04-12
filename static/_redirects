@@ -10,7 +10,7 @@ http://oe7drt.at/* https://oe7drt.com/ 301!
 # Main redirects
 # ----------------------------------------------------------------------
 
-# aliases = ["hotspot","mmdvm-hotspot","mmdvm"]
+/contact/                   /about/#contact
 /mmdvm/                     /blog/my-mmdvm-hotspot/ 301
 /hotspot/                   /blog/my-mmdvm-hotspot/ 301
 /mmdvm-hotspot/             /blog/my-mmdvm-hotspot/ 301

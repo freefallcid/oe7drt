@@ -1,17 +1,25 @@
 +++
 title = "About"
 date = "2020-01-02"
-aliases = ["about-us","oe7drt","contact"]
+aliases = ["about-us","oe7drt"]
 #author = "Hugo Authors"
+
 +++
 
-Hello, my name is Dominic and I maintain this website.  
+Hello, my name is **Dominic** and I maintain this website.  
 I am a licensed ham radio operator since 2019 and my callsign is **OE7DRT**.
 
-My QTH is **Längenfeld** [^lgfd] - the locator for that is
+My QTH is **Längenfeld** - the locator for that is
 [JN57lb](http://www.levinecentral.com/ham/grid_square.php?Grid=JN57lb).
 
-[^lgfd]: You can also write this like: Laengenfeld
+![eQSL certified authority](/images/eqsl_auth_cert.png)
+
+## Contact
+
+Please use the form below, make sure to use a valid email address if you want
+an answer back!
+
+{{< contactform >}}
 
 ## About this website
 
@@ -46,48 +54,7 @@ license also applies to the [codebase of my website][gh].
 [mit]: https://github.com/freefallcid/oe7drt/blob/master/LICENSE
 [gh]: https://github.com/freefallcid/oe7drt
 
-For attribution a link back to my website (OE7DRT.com) should be enough.
-
-## The equipment I use
-
-- Icom IC-7300 transceiver
-- PSU-1250 switched-mode power supply 50A
-- 12Ah 12V LiFePo4 battery (for portable use)
-- 12Ah 12V AGM battery (for not so portable use)
-- MFJ-993B antenna tuner
-- MFJ-269C SWR analyzer
-- CHA HYBRID MICRO in combination with
-  - CHA MIL WHIP 2.0
-  - CHA MIL EXTENSION 2.0
-  - 60' wire (~18m)
-- CHA EMCOMM II (matching box with 60' wire)  
-- Complete Multiband Antenna 6-80m  
-  (AlphaAntenna) - **I regret buying this antenna.**
-- 10m antenna mast (fiberglass)
-- Hytera PD-785G
-- Anytone D878UV+  
-  I run into problems with this device as the computer stopped connecting to the
-  radio all of a sudden. I was literally flashing the shit out of the radio when
-  I was testing different setups on my codeplug. I got the device back and I got
-  told to not send whilst the programming cable is plugged in. Now **I always shut
-  down the radio when I unplug it** and I make sure to **not have GPS enabled**
-  because APRS could send out beacons while plugged into the computer.
-
-## Contact
-
-I guess the contact form would be the easiest way to contact me -- I will
-implement a form very soon. I just haven't found the time for that until now.
-
-You can also contact me on these channels:
-
-- direct email
-- Telegram
-- WhatsApp
-- Brandmeister SMSC (262995)
-- DAPNET OE7DRT
-- DMR Reflector 4197 or Brandmeister TG2327
-
-![eQSL certified authority](/images/eqsl_auth_cert.png)
+For attribution a link back to my website (`OE7DRT.com`) should be enough.
 
 ## Other resources
 
