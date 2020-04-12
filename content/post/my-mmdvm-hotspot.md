@@ -1,9 +1,26 @@
 +++
 title = "My MMDVM Hotspot"
-date = 2020-03-15T10:25:38+01:00
-aliases = ["hotspot"]
+summary = "This is the setup that I use at my stationary hotspot at home."
+date = 2020-04-12T15:14:17+02:00
+tags = ["ham radio","mmdvm","hotspot","nextion","dmr"]
 
 +++
+
+This article was first published as a page on March 15 2020. I moved this page
+to the post section on April 12 2020 to keep a compact menu line on the top.
+
+## Changelog
+
+**April 12 2020**
+
+- moved page to posts and added some redirects for the pages urls
+- added changelog paragraph to reflect updates made to the article
+
+**March 15 2020**
+
+- Page published (as page, not as post)
+
+## General information
 
 My Hotspot runs on a Raspberry Pi 4B with 4GB RAM. It is stable most of the time
 and the temperature is around 38-40°C normally -- if PHP runs crazy it went up
@@ -11,13 +28,15 @@ to 52°C sometimes. But since I disabled the option `extended lookup (show names
 in the dashboard it stays pretty much on 40°C. I also disabled the option that
 shows talk group names.
 
-## General information
-
 I only run MMDVMHost connected to the IPSC2-OE-DMO server. IPSC2 holds some of
 the Brandmeister talkgroups like {{< badge "primary" >}}2327{{< /badge >}} so
 I thought I will ditch DMRGateway. The connected 7 inch screen displays the
 five last heard stations (Callsign, Name, Time, Duration, Slot, Talkgroup). An
 online dashboard is also available -- I use the dashboard made by Kim DG9VH.
+
+I made [another post when I did my first setup with Pi-Star][pistar-setup].
+
+[pistar-setup]: {{< relref "post/hs-dual-hat-with-pistar-v4.md" >}}
 
 ## Overview
 
@@ -158,14 +177,3 @@ I think that they are not as precise as I would need them :)
 ![Another picture #2](/images/pages/hotspot_02.jpg)
 
 It's not perfect but hey, we're hams right?
-
-Although I cannot send from this distance, I can receive the signal of my hotspot
-on a trail around 722 meters away. For the record, I am about 80-100 meters
-higher than my home QTH where my hotspot stands. I receive the whole way down to
-the house with very little interruptions (really, really little).
-
-![Another picture #3 - Distance](/images/pages/hotspot_distance.jpg)
-
-I will for sure record the track to this spot one day, because the hightlighted
-track is not correct -- in nature, this path is not as straight as it looks on
-the picture HI.
