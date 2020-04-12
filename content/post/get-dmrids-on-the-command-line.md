@@ -116,14 +116,14 @@ heard ids.
 Simply get one DMRID (or two, depends on the callsign though):
 
 ```
-call.sh OE7DRT
+call OE7DRT
 ```
 
 Now let's think a bit more complex. You can use the script in a loop. Let's fetch
 some austrian callsigns only.
 
 ```
-for i in 7one 7two 1three; do call.sh oe$i ids >>! ids; done
+for i in 7one 7two 1three; do call oe$i ids >>! ids; done
 ```
 
 That would fetch 3 callsigns `OE7ONE`, `OE7TWO` and `OE1ONE` and write them
