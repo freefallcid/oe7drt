@@ -3,8 +3,6 @@ title = "Welcome, this is my website"
 date = 2020-05-17T11:01:05+02:00
 private = true
 robotsdisallow = true
-draft = true
-published = false
 
 +++
 
