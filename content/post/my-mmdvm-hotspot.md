@@ -3,6 +3,7 @@ title = "My MMDVM Hotspot"
 summary = "This is the setup that I use at my stationary hotspot at home."
 date = 2020-04-12T15:14:17+02:00
 tags = ["ham radio","mmdvm","hotspot","nextion","dmr","equipment"]
+lastmod = 2020-05-17T11:37:00+02:00
 
 +++
 
@@ -162,6 +163,13 @@ for the whole flashing process!{{< /alert >}}
 When it fails, just flash again until you get 100%. Reboot the device after that.
 
 https://github.com/juribeparada/MMDVM_HS
+
+Once you cloned the firmware repository you can select the version *v1.4.8* by
+checking out the tag *v1.4.8*.
+
+```
+git checkout v1.4.8
+```
 
 ## Pictures
 
