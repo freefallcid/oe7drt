@@ -24,9 +24,13 @@ his work-around for this.
 He just changed the 17th byte in the codeplug file so the bands in the codeplug
 matched the bands used on the radio.
 
+This is the way I changed this byte:
+
 ``` bash
 printf '\x03' | dd of=codeplug.rdt bs=1 seek=17 count=1 conv=notrunc
 ```
+
+I work on a Macbook, so a Terminal App is not too far away ;-)
 
 ## Why to do this?
 
