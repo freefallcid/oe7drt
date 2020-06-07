@@ -2,13 +2,19 @@
 title = "My MMDVM Hotspot"
 summary = "This is the setup that I use at my stationary hotspot at home."
 date = 2020-04-12T15:14:17+02:00
-tags = ["ham radio","mmdvm","hotspot","nextion","dmr","equipment"]
-lastmod = 2020-05-17T11:37:00+02:00
+tags = ["ham radio","mmdvm","hotspot","nextion","dmr","c4fm","equipment"]
+lastmod = 2020-06-07T11:10:43+02:00
 
 +++
 
 This article was first published as a page on March 15 2020. I moved this page
 to the post section on April 12 2020 to keep a compact menu line on the top.
+
+{{< alert "secondary" >}}
+The content of this article may change continuously. This website does not
+reflect an up-to-date state of my hotspot but it gives an idea of my current
+setup.
+{{< /alert >}}
 
 ## Changelog
 
@@ -114,7 +120,7 @@ Besides that, my pager died.
 
 {{< background "warning" >}}
 <strong>Warning!</strong> When I had the beta firmware flashed I had to reset
-the modem with that that little SMD button on the platine first to use M/m mode
+the modem with that little SMD button on the platine first to use M/m mode
 (DMR Simplex 1031Hz test pattern (CC1 ID1 TG9)). Otherwise it hang and I wasn't
 able to stop the transmitter (even when I killed MMDVMCal).
 {{< /background >}}
@@ -154,7 +160,7 @@ Flashing will fail when you try to flash the firmware without this connection.
 
 ![Flashing](/images/post/2020/04/hotspot_flashing.jpg)
 
-But it helps when you got a pair of tweezers in you house. Just make sure to get
+But it helps when you got a pair of tweezers in your house. Just make sure to get
 good contact to the metal.
 
 {{< alert "danger" >}}Flashing will fail if you cannot hold this steady

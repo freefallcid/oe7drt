@@ -2,10 +2,16 @@
 title = "My 7-Inch DMR Dashboard"
 summary = "I did not like the small screen and the small housing of my last Hotspot so I decided to make a bigger housing where I needed a bigger screen. Look what I got myself up and running, with some major options to control the hotspot just right off the screen itself. Make sure to install the NextionDrivers when you use this layout - it offers way more possibilities."
 date = 2020-03-28T12:42:44+01:00
-lastmod = 2020-03-31T21:45:33+02:00
+lastmod = 2020-06-07T11:10:12+02:00
 tags = ["ham radio","nextion","dmr"]
 
 +++
+
+{{< alert "secondary" >}}
+The content of this article may change continuously. Follow the
+<a href="/blog/my-7inch-dmr-dashboard/#get-the-files-hmi-and-tft">Github
+repository</a> to keep your files up to date.
+{{< /alert >}}
 
 ## Model and overview
 
@@ -17,7 +23,7 @@ the calculated BER will be displayed.
 
 I've lost a few words about this topic (Nextion) in general on my first post
 about my 2.4 inch nextion screen
-[in a previous article](/blog/nextion-dmr-last-heard-dashboard/#the-editor).
+[in a previous article]({{ relref "/post/nextion-dmr-last-heard-dashboard.md#the-editor" }}).
 
 ![Nextion back view / model](/images/post/2020/03/nxt07_00.jpg)
 
