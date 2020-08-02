@@ -65,6 +65,8 @@ hugo theme made me decide to implement most articles in this smaller one.
 
 For reference, my older website are still accessible on the following URLs:
 
+- [oe7drt.com hugo version](https://oe7drt-hugo.netlify.app/)  
+  this is the website, that you are looking at the moment
 - [dominicreich.com jekyll version](https://dominicreich-old.netlify.com/)  
   you can search this website with algolia search
 - [dominicreich.com hugo version](https://dominicreich.com/)  
