@@ -15,6 +15,8 @@ http://oe7drt.at/* https://oe7drt.com/ 301!
 /hotspot/                   /blog/my-mmdvm-hotspot/ 301
 /mmdvm-hotspot/             /blog/my-mmdvm-hotspot/ 301
 
+/projects/aprs-igate/       /aprs-igate/
+
 
 #/recipes/                  /categories/rezepte/ 301
 #/rezepte/                  /categories/rezepte/ 301
