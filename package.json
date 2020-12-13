@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/freefallcid/oe7drt#readme",
   "dependencies": {
-    "atomic-algolia": "^0.3.17"
+    "atomic-algolia": "^0.3.19"
   }
 }
